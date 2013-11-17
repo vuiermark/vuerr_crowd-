@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  youtube_channel: MyString
+  title: MyString
+  description: MyString
+  country: MyString
+  city: MyString
+  funding_goal: 9.99
+  deadline: 2013-11-13
+
+two:
+  name: MyString
+  youtube_channel: MyString
+  title: MyString
+  description: MyString
+  country: MyString
+  city: MyString
+  funding_goal: 9.99
+  deadline: 2013-11-13

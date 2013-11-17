@@ -1,0 +1,24 @@
+$navbar-default-link-color: white;
+$navbar-default-text-size: 18px;
+
+@import 'bootstrap';
+
+.navbar {
+  background-color: #FF0000;
+  padding: 5px;
+  border-bottom: 3px;
+}
+
+.line {
+	margin-bottom: 20px;
+	border: 1px solid red;
+	width: 100%; 
+	color: #FF0000;
+}
+
+/* progress bar */
+
+.progress {
+	margin-top: 25px;
+	height: 15px;
+}

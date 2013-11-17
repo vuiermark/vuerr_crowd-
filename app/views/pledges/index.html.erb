@@ -1,0 +1,15 @@
+<div class="container">
+<h1>Pledges for <%= link_to(@project.name, @project) %></h1>
+<ol>
+	<% @pledges.each do |p| %>
+		<li>
+				<%= mail_to(p.email, p.name) %> pledged
+				<span><%= number_to_currency(p.amount) %></span>
+				(<span><%= time_ago_in_words(p.created_at) %> ago</span>)
+			<p>
+				&quot;<%= p.comment %>&quot;
+			</p>
+		</li>
+	<% end %>
+</ol>
+</div>

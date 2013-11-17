@@ -1,0 +1,57 @@
+
+<%= render 'layouts/featured' %>
+
+<div class="container">
+
+<h1>We have <%= pluralize(@projects.size, 'project') %> ready to be backed by you!</h1>
+
+<div class="line">
+</div>
+<div id="pins">
+	<% @projects.each do |project| %>
+	<div class="box panel panel-default">
+		
+		<div class="project-image">
+			<%= link_to image_for(project), project %>
+		</div>
+		<div class="p-name"><h4><%= link_to project.name, project %></h4>
+		</div>
+		<div class="p-funding-info">Deadline:
+			<%= format_deadline(project) %>
+		</div>
+		<div class="panel-body">
+			<div class="p-description">
+				<%= project.description %>
+			</div>
+			<div class="panel-heading center">
+				 <div class="progress">
+          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: <%= project.percentage_funded %>">
+          </div>
+        </div>
+				<div class="project-font">
+					<div class="p-funding-info">
+						<ul class="nav navbar-nav navbar-left">
+							<li class="box1">Funding Goal:
+							<strong><%= number_to_currency(project.funding_goal) %></strong>
+							</li>
+							<li class="box2">
+							Monthly Funding Goal:
+							<strong><%= number_to_currency(project.monthly_funding_goal) %></strong>
+							</li>
+							<li class="box3">
+								Total Raised: 
+								<strong><%= number_to_currency(project.total_amount_pledged) %></strong>
+							</li>
+						</ul>
+					</div>
+				</div> <!-- project-font -->
+			</div> <!-- panel-heading center -->
+		</div> <!-- panel-body -->
+	</div> <!-- box panel panel-default -->
+	<% end %>
+</div> <!-- pins -->
+</div> <!-- container -->
+<div class="line">
+</div>
+
+

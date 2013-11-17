@@ -1,0 +1,203 @@
+// Place all the styles related to the projects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* subheader */
+.button1 {
+	color: white;
+	background: #00BFFF;
+	font-family: Helvetica, Calibri, sans-serif;
+	font-weight: bold;
+	text-align: center;
+	margin: 0px;
+	height: 47px;
+	width: 161px;
+	border: none;
+}
+
+.button2 {
+	color: white;
+	background-color: #99CC00;
+	font-family: Helvetica, Calibri, sans-serif;
+	font-weight: bold;
+	text-align: center;
+	margin: 0px;
+	border: none;
+	height: 47px;
+	width:	160px;
+}
+
+/* Index page */
+
+.center {
+	text-align: center;
+}
+
+.left-justify {
+	text-align: left;
+}
+
+#pins {
+	margin: 0px auto;
+}
+
+.box {
+	margin-bottom: 10px;
+	width: 910px;
+}
+
+.box img {
+	width: 55%;
+	height: 100%;
+	padding-right: 10px;
+}
+
+/* featured campaign */
+
+
+.feature-image {
+	img {
+	float: left;
+	height: 390px;
+	width: 640px;
+	}
+}
+
+.feature-name {
+	font-style: italic;
+	font-family: helvetica, sans-serif;
+}
+
+.feature-description {
+	font-family: helvetica, sans-serif;
+	font-size: 13.5px;
+	text-align: left;
+}
+
+.feature-funding-info {
+	font-family: helvetica, sans-serif;
+	font-size: 14px;
+	text-align: left;
+	margin-bottom: 25px;
+}
+
+
+/* index */
+
+.project-image {
+	img {
+	float: left;
+	}
+}
+
+.p-name {
+	font-style: italic;
+	font-family: helvetica, sans-serif;
+}
+
+.p-description {
+	font-family: helvetica, sans-serif;
+	font-size: 16px;
+	text-align: left;
+}
+
+.p-funding-info {
+	font-family: helvetica, sans-serif;
+	font-size: 14px;
+	text-align: left;
+	margin-bottom: 25px;
+}
+
+/* projects box blocks */
+.box1
+{
+	text-align: center;
+color: white;
+background-color: red;
+width:125px;
+height:50px;
+  
+/* Internet Explorer 10 */
+display:-ms-flexbox;
+-ms-flex-pack:center;
+-ms-flex-align:center;
+
+/* Firefox */
+display:-moz-box;
+-moz-box-pack:center;
+-moz-box-align:center;
+
+/* Safari, Chrome, and Opera */
+display:-webkit-box;
+-webkit-box-pack:center;
+-webkit-box-align:center;
+
+/* W3C */
+display:box;
+box-pack:center;
+box-align:center;
+}
+
+.box2
+{
+text-align: center;
+color: white;
+background-color: #99CC00;
+width:125px;
+height:50px;
+
+/* Internet Explorer 10 */
+display:-ms-flexbox;
+-ms-flex-pack:center;
+-ms-flex-align:center;
+
+/* Firefox */
+display:-moz-box;
+-moz-box-pack:center;
+-moz-box-align:center;
+
+/* Safari, Chrome, and Opera */
+display:-webkit-box;
+-webkit-box-pack:center;
+-webkit-box-align:center;
+
+/* W3C */
+display:box;
+box-pack:center;
+box-align:center;
+}
+
+.box3
+{
+text-align: center;
+color: white;
+background-color: #00BFFF;
+width:125px;
+height:50px;
+
+/* Internet Explorer 10 */
+display:-ms-flexbox;
+-ms-flex-pack:center;
+-ms-flex-align:center;
+
+/* Firefox */
+display:-moz-box;
+-moz-box-pack:center;
+-moz-box-align:center;
+
+/* Safari, Chrome, and Opera */
+display:-webkit-box;
+-webkit-box-pack:center;
+-webkit-box-align:center;
+
+/* W3C */
+display:box;
+box-pack:center;
+box-align:center;
+}
+
+.footer {
+	margin-top: 60px;
+	text-align: center;
+}
