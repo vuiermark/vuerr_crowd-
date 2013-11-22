@@ -22,6 +22,10 @@ class Project < ActiveRecord::Base
 		pledges.sum(:amount) || 0
 	end
 
+	def total_monthly_amount_pledged
+		pledges.sum(:monthly_amount) || 0
+	end
+
 	def amount_outstanding
 		funding_goal - total_amount_pledged
 	end
@@ -35,8 +39,13 @@ class Project < ActiveRecord::Base
     return result.to_s + '%'
 	end 
 
+	def percentage_funded_monthly
+		result = (total_monthly_amount_pledged.to_f / monthly_funding_goal.to_f) * 100
+		return result.to_s + '%'
+	end
+
 	def self.featured_campaign
-		where(name: "Discount Therapist")
+		where(featured: true)
 	end
 end
 

@@ -28,6 +28,7 @@ module ProjectsHelper
 	    youtube_url[/^.*((v\/)|(embed\/)|(watch\?))\??v?=?([^\&\?]*).*/]
 	    youtube_id = $5
 	  end
+	  
 	  %Q{<iframe title="YouTube video player" width="720" height="400" src="http://www.youtube.com/embed/#{ youtube_id }" frameborder="0" allowfullscreen></iframe>}
 	end
 end

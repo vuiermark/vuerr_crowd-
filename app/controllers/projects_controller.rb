@@ -39,10 +39,6 @@ class ProjectsController < ApplicationController
 		redirect_to projects_url, alert: "Campaign successfully deleted!"
 	end
 
-	def featured_campaign
-		@project = Project.find_by(name: "Discount Therapist")
-	end
-
 private
 
 	def project_params
