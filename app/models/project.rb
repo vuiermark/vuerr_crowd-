@@ -7,6 +7,7 @@ class Project < ActiveRecord::Base
 		message:  "must reference a GIF, JPG, JPEG, or PNG image" 
 	}
 	validates :deadline, presence: true
+	validates :featured, :inclusion => {:in => [true, false]}
 
 	has_many :pledges, dependent: :destroy
 

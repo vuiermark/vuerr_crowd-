@@ -1,5 +1,6 @@
 class PledgesController < ApplicationController
 	before_action :set_project
+	before_filter :authenticate_user!
 
 	def index
 		@pledges = @project.pledges
