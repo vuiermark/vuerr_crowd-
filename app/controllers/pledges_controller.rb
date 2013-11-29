@@ -18,6 +18,15 @@ class PledgesController < ApplicationController
 		else
 			render :new
 		end
+		redirect_to "#"
+	end
+
+	def contribute
+		
+		@amount=params[:pledge][:monthly_amount].to_f
+		session[:pledge_data]=params[:pledge]
+        @project_id=params[:project_id]
+         
 	end
 
 	private

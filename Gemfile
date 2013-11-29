@@ -11,11 +11,15 @@ gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: '3'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'devise', '~> 3.1.1'
-
+gem 'debugger'
 group :development, :test do
 	gem 'sqlite3'
+	gem 'mysql2'
 end
-
+group :assets do
+ # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  gem 'therubyracer', :platforms => :ruby
+end
 group :production do
 	gem 'pg'
 end

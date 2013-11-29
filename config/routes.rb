@@ -4,8 +4,14 @@ VuerrCrowd::Application.routes.draw do
   root "projects#index"
  
   resources :projects do
-  	resources :pledges
+  	resources :pledges do
+  		collection do
+  		 post 'contribute'
+  		end
+  	end
   end
   
-  resources :charges
+  resources :charges 
+  	
+
 end

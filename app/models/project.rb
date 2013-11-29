@@ -10,7 +10,7 @@ class Project < ActiveRecord::Base
 	validates :featured, :inclusion => {:in => [true, false]}
 
 	has_many :pledges, dependent: :destroy
-
+    has_many :payment_statuses
 	def pledging_expired?
 		deadline < Date.today
 	end

@@ -11,20 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131121202235) do
+ActiveRecord::Schema.define(version: 20131128114429) do
+
+  create_table "payment_statuses", force: true do |t|
+    t.integer  "user_id"
+    t.string   "email"
+    t.float    "amount"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "pledges", force: true do |t|
     t.string   "name"
     t.string   "email"
-    t.decimal  "amount"
+    t.decimal  "amount",         precision: 10, scale: 0
     t.text     "comment"
     t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "monthly_amount"
+    t.decimal  "monthly_amount", precision: 10, scale: 0
   end
 
-  add_index "pledges", ["project_id"], name: "index_pledges_on_project_id"
+  add_index "pledges", ["project_id"], name: "index_pledges_on_project_id", using: :btree
 
   create_table "projects", force: true do |t|
     t.string   "name"
@@ -33,11 +42,11 @@ ActiveRecord::Schema.define(version: 20131121202235) do
     t.string   "description"
     t.string   "country"
     t.string   "city"
-    t.decimal  "funding_goal"
+    t.decimal  "funding_goal",         precision: 10, scale: 0
     t.date     "deadline"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "monthly_funding_goal"
+    t.decimal  "monthly_funding_goal", precision: 10, scale: 0
     t.text     "long_description"
     t.string   "image_file_name"
     t.string   "video"
@@ -59,7 +68,7 @@ ActiveRecord::Schema.define(version: 20131121202235) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

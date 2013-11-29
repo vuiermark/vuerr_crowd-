@@ -1,7 +1,7 @@
 <div class="container">
 <h2>New Pledge for <%= link_to @project.name, @project %></h2>
 
-<%= form_for([@project, @pledge]) do |f| %>
+<%= form_for([@project, @pledge],:url=>contribute_project_pledges_path ,:remote=>true) do |f| %>
 <%= render "shared/errors", object: @pledge %>
 
 	<div class="form-group">
@@ -15,9 +15,9 @@
 	<div class="form-group">
 		<%= f.label :monthly_amount %><br/>
 		<% Pledge::MONTHLY_AMOUNT_LEVELS.each do |amount| %>
-			<span class="radio-inline">
+			<span class="radio-inline" >
 				<%= f.radio_button :monthly_amount,
-								amount %> <%= amount %>
+								amount,:class =>"radio" %> <%= amount %>
 			</span>
 		<% end %>
 	</div>
@@ -26,8 +26,8 @@
 		<%= f.label :one_time_amount %><br/>
 		<% Pledge::AMOUNT_LEVELS.each do |amount| %>
 			<span class="radio-inline">
-				<%= f.radio_button :amount,
-								amount %> <%= amount %>
+				<%= f.radio_button :monthly_amount,
+								amount,:class=>"radio" %> <%= amount %>
 			</span>
 		<% end %>
 	</div>
@@ -35,11 +35,27 @@
 		<%= f.label :comment %><br/>
 		<%= f.text_area :comment, class: "form-control" %>
 	</div>
+	
 	<div class="form-group">
-		<%= f.submit "Contribute now", class: "btn btn-success" %><br/>
+
+		<%= f.submit "Contribute now", class: "btn btn-success stripe" %> <span style="display:none;" class="loader-payment"><img src='/assets/loading2.gif'></span><br/>
 		<p>
 		<%= button_to "Cancel", @project, class: "btn btn-danger" %>
 		</p>
 	</div>
 	<% end %>
+</div>	
+<div class="searchresult">
 </div>
+
+<script>
+$( document ).ready(function() {
+$(".stripe").click(function() {
+$(".loader-payment").show();
+ setTimeout(function(){
+       $("button.stripe-button-el").click()
+      }, 3000);
+$(".loader-payment").fadeOut(20000);
+});
+});
+</script>

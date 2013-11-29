@@ -3,7 +3,8 @@
 	  <div class="col-md-offset-1 col-md-10">
 	    <div class="panel panel-default center">
 	      <div class="panel-body">
-	      	<%= raw(youtube_embed(@project.video)) %>
+	      	<div class="youtube">
+	      	<%= raw(youtube_embed(@project.video)) %></div>
 					<h3><%= @project.name %></h3>
 					<p><%= @project.long_description %></p>
 				</div>
@@ -42,7 +43,9 @@
 						<p><%= @project.long_description %></p>
 					
 						<div class="center">
-				       <%= pledge_link_for(@project) %>
+
+				       <%= pledge_link_for(@project)%>
+
 				    </div>
 				  </div> <!-- panel-heading center -->
 				</div> <!-- panel-body -->
