@@ -13,16 +13,11 @@ class ChargesController < ApplicationController
 	        @payment.amount=session[:pledge_data][:monthly_amount].to_f
 	        @payment.project_id=params[:project]
 	        @payment.save
-			customer = Stripe::Customer.create(
-				:email => params[:stripeEmail],
-				:card  => params[:stripeToken])
-
-			charge = Stripe::Charge.create(
-				:customer     => customer.id,
-				:amount       => session[:pledge_data][:monthly_amount].to_i,
-				:description  => 'Rails Stripe customer',
-				:currency     => 'usd')
-	       
+			customer = Stripe::Customer.create(:email => params[:stripeEmail],:card  => params[:stripeToken])
+			
+            @amount_val=(session[:pledge_data][:monthly_amount].to_f * 100)
+			charge = Stripe::Charge.create(:customer=> customer.id,:amount => @amount_val.to_i,:description  => 'Rails Stripe customer',:currency     => 'usd')
+	        
 				
        
         
