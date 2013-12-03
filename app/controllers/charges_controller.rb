@@ -29,8 +29,8 @@ class ChargesController < ApplicationController
          @pledge.project_id=params[:project]
          @pledge.save
        	 session[:pledge_data]=nil
-        redirect_to root_path
+        redirect_to root_path,
+        					notice: "Thank you for your support!"
           
 	end
-
 end
