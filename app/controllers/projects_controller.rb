@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
 	before_filter :authenticate_user!, except: [:index, :show]
+	before_action :correct_user, only: [:edit, :update, :destroy]
 
 	def index
 		@projects = Project.upcoming
