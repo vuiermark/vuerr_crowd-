@@ -39,8 +39,9 @@
 	<div class="form-group">
 
 		<%= f.submit "Contribute now", class: "btn btn-success stripe" %> <span style="display:none;" class="loader-payment"><img src='/assets/loading2.gif'></span><br/>
+		<br/>
 		<p>
-		<%= button_to "Cancel", @project, class: "btn btn-danger" %>
+		<%= link_to "Cancel", @project, class: "btn btn-danger" %>
 		</p>
 	</div>
 	<% end %>

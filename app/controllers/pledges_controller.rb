@@ -18,7 +18,7 @@ class PledgesController < ApplicationController
 		else
 			render :new
 		end
-		redirect_to "#"
+		#redirect_to "#"
 	end
 
 	def contribute
